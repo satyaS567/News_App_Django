@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>News|App</title>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">News|App</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categories
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="{% url 'index' %}?category=Business">Business</a>
+                                <a class="dropdown-item" href="{% url 'index' %}?category=Entertainment">Entertainment</a>
+                                <a class="dropdown-item" href="{% url 'index' %}?category=General">General</a>
+                                <a class="dropdown-item" href="{% url 'index' %}?category=Health">Health</a>
+                                <a class="dropdown-item" href="{% url 'index' %}?category=Science">Science</a>
+                                <a class="dropdown-item" href="{% url 'index' %}?category=Sports">Sports</a>
+                                <a class="dropdown-item" href="{% url 'index' %}?category=Technology">Technology</a>
+                            </div>
+                            <div class="ml-4 float-right">
+                                <form action="" method="get">
+                                    <input class="form-control" type="text" placeholder="Search" name="country">
+                                    <button class="btn btn-info" type="submit" value="Search">SearchBycountry</button>
+                                </form>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <h2 class="text-center">Top News</h2>
+    <div class="container" id="flex">
+        <div class="row gy-2 my-2 float-center" >
+            {% for i in articles %}
+            <div class="col-xxl-2 col-md-4 col-sm-6">
+
+                <div class="card mb-2 mt-2" style="width: 23rem;">
+                    <img src="{{i.urlToImage}}" class="card-img-top" alt="Image Not Found">
+                    <div class="card-body">
+                        <p class="card-text">{{i.author}}</p>
+                        <h5 class="card-title">{{i.title}}</h5>
+                        <p class="card-title">{{i.source.name}}</p>
+                        <p class="card-text">{{i.description}}</p>
+                        <hr>
+                        <small>PublishedAt:{{i.publishedAt}}</small>
+                        <a href="{{i.url}}" target="_blank" class="btn btn-warning m-1">Readmore.</a>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    <footer class="bg-success text-center text-dark mb-0">
+
+        <div class="text-center p-1 text-dark">
+            © 2023 Copyright|
+            <a class="text-dark" href="#">SPSharma</a>
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
