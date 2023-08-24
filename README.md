@@ -44,6 +44,9 @@ Modification can be done:
 2. Implement user authentication, profile management, and personalized settings.
     User Registration and Authentication:
 3. Users can create accounts, log in, and manage their profiles. Personalized settings allow users to save preferences, bookmark articles, and customize their news feed based on topics of interest.
+![New app home](https://github.com/satyaS567/News_App_Django/assets/66719292/2421ecb5-abad-448c-af8b-a8a0028b6624)
+![news app home1](https://github.com/satyaS567/News_App_Django/assets/66719292/46caa8a5-2fdb-4ed8-80a2-3324344a9509)
+![news app](https://github.com/satyaS567/News_App_Django/assets/66719292/13e998c2-47d0-4dc2-a977-3f72906a0ccb)
 
 
 
